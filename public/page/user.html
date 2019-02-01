@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>后台管理</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/user.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<style type="text/css">
+	[v-cloak] {
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<div id="app" v-cloak>
+		<el-container style="min-height: 100%;border: 1px solid #eee">
+			<el-header style="text-align: left; font-size: 12px">
+				<h2 class="title"><img src="/assets/icon.png">微信砍价后台管理系统</h2>
+			</el-header>
+			<el-container>
+				<el-aside width="204px" style="border-right: solid 1px #e6e6e6;">
+					<el-menu :default-openeds="['3']" default-active="3-1" style="border-width: 0">
+						<el-submenu index="1">
+							<template slot="title"><i class="el-icon-goods"></i>商品管理</template>
+							<a href="./index.html"><el-menu-item index="1-1">商品列表</el-menu-item></a>
+							<a href="./add.html"><el-menu-item index="1-2">新增商品</el-menu-item></a>
+						</el-submenu>
+						<el-submenu index="2">
+							<template slot="title"><i class="el-icon-sort"></i>砍价管理</template>
+							<a href="./trade.html?status=going"><el-menu-item index="2-1">在砍列表</el-menu-item></a>
+							<a href="./trade.html?status=bingo"><el-menu-item index="2-2">达到目标</el-menu-item></a>
+							<a href="./trade.html?status=timeout"><el-menu-item index="2-3">完结未购</el-menu-item></a>
+							<a href="./trade.html?status=bought"><el-menu-item index="2-4">已经购买</el-menu-item></a>
+						</el-submenu>
+						<el-submenu index="3">
+							<template slot="title"><i class="el-icon-star-off"></i>用户管理</template>
+							<el-menu-item index="3-1">用户查看</el-menu-item>
+						</el-submenu>
+					</el-menu>
+				</el-aside>
+				<el-main>
+				  <el-table
+			    :data="tableData"
+			    stripe
+			    style="width: 100%">
+			    <el-table-column
+			      prop="date"
+			      label="日期"
+			      width="180">
+			      <template slot-scope="props">
+			          <img style="width: 50px;height: 50px;" :src="props.row.avatar">
+			      </template>
+			    </el-table-column>
+			    <el-table-column
+			      prop="nickname"
+			      label="姓名"
+			      width="180">
+			    </el-table-column>
+			    <el-table-column
+			      prop="createtime"
+			      label="首次使用时间">
+			    </el-table-column>
+			  </el-table>
+				</el-main>
+			</el-container>
+		</el-container>
+
+	</div>
+	<script type="text/javascript" src="./js/user.js"></script>
+</body>
+</html>

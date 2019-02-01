@@ -1,0 +1,21 @@
+<!--logs.wxml-->
+<view class="main">
+	<view class="row">
+    <image class="pic" src="{{baseurl + showProduct.picture}}"></image>
+		<view class="detail">
+			<text class="introduce">{{showProduct.name}}</text>
+			<view class="tips">
+				<text class="status">{{status[showProduct.status]}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="buy-msg">
+		<view class="content name">{{buy_name}}</view>
+		<view class="content phone">{{buy_phone}}</view>
+		<view class="content address">{{buy_address}}</view>
+	</view>
+	<view class="footer">
+		<view class="price">原价￥{{showProduct.initial_price}} / 现价：<text style="font-weight: 900">￥{{showProduct.current_price}}</text></view>
+		<button class="buy" bindtap="buyProduct">立即购买</button>
+	</view>
+</view>

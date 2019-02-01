@@ -1,0 +1,16 @@
+<!--logs.wxml-->
+<view class="main">
+	<view class="row">
+		<text class="label">收件姓名：</text>
+		<input class="input" bindinput="setName" value="{{buy_name}}" placeholder="请填写收件人姓名"/>
+	</view>
+	<view class="row">
+		<text class="label">收件电话：</text>
+		<input class="input" bindinput="setPhone" value="{{buy_phone}}" placeholder="请填写收件人电话"/>
+	</view>
+	<view class="row last">
+		<text class="label top">收件地址：</text>
+		<textarea class="textarea" bindinput="setAddress" value="{{buy_address}}" placeholder="请填写收件人地址"/>
+	</view>
+	<button class="btn" bindtap="submit">确认收货信息</button>
+</view>

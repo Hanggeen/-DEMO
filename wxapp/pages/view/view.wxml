@@ -1,0 +1,35 @@
+<!--logs.wxml-->
+<view class="main">
+	<view class="pic-con">
+     <image class="pic" src="{{baseurl + productMessage.picture}}"></image>
+	</view>
+	<view class="name-con">
+		<text class="name">{{productMessage.name}}</text>
+	</view>
+	<view class="message">
+		<text class="range">活动时间：{{productMessage.term}}小时</text>
+		<text class="join">已有{{joinCount}}人参与</text>
+	</view>
+	<view class="price-con">
+		<text class="floor_price">￥{{productMessage.floor_price}}</text> <text class="price">原价：￥{{productMessage.price}}</text>
+	</view>
+	<view>
+		<button class="buy-btn" wx:if="{{!shareAble}}" bindtap="goBargain">马上砍价</button>
+		<button class="buy-btn2" wx:if="{{!shareAble}}" bindtap="goBuy">直接购买</button>
+		<button class="buy-btn" wx:if="{{shareAble}}" open-type="share">转发给好友砍价</button>
+	</view>
+	<view class="rule">
+		<view class="title">商品介绍</view>
+		<text class="content">{{productMessage.introduce}}</text>
+	</view>
+	<view class="rule border">
+		<text class="title">领取规则</text>
+		<text class="content">
+			1. 每位用户可以发起一个或多个砍价项目；
+			2. 发起后可通过微信转发邀请好友砍价，砍价价格随机生成，每位好友只能砍价一次；
+			3. 砍价必须在活动有效期内；
+			4. 砍价结束后，该价格也能购买商品；
+			5. 所有解释权归本砍价主办方拥有
+		</text>
+	</view>
+</view>

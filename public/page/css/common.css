@@ -1,0 +1,48 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body, #app {
+	height: 100%;
+}
+.el-header {
+  background-color: #B3C0D1;
+  color: #333;
+  line-height: 60px;
+}
+
+.el-aside {
+  color: #333;
+}
+/*超出显示省略号*/
+.el-table .cell {
+	overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+
+/*去掉链接下划线*/
+.el-submenu a {
+  color: #303133;
+  text-decoration: none;
+}
+
+
+.title {
+  font-weight: 100;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.title > img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.el-collapse-item__header {
+  height: 80px;
+}

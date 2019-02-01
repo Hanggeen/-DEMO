@@ -1,0 +1,45 @@
+<view class="app" wx:if="{{dataReady}}">
+	<view class="sharer">
+		<view>
+				<image class="sharer-avatar" src="{{sharerMsg.avatar}}"></image>
+		</view>
+		<text class="sharer-toast">你的好友{{sharerMsg.nickname}}邀请你帮TA砍价！</text>
+	</view>
+	<view class="product">
+		<view class="top">
+      <image class="pic" src="{{baseurl + tradeMsg.picture}}"></image>
+			<view class="msg">
+				<text class="title">{{tradeMsg.name}}</text>
+				<text class="status">{{statusDetail}}</text>
+				<text class="clock">{{clock}}</text>
+			</view>
+		</view>
+		<view class="progress">
+			<view class="point" style="left: {{leftPercent}}rpx">
+				￥{{ tradeMsg.current_price}}
+				<view class="triangle"></view>
+			</view>
+			<progress class="bar" percent="{{(tradeMsg.current_price - tradeMsg.floor_price) / (tradeMsg.initial_price - tradeMsg.floor_price) * 100}}" stroke-width="12" border-radius="10" activeColor="#ffc53f"/>
+			<view class="floor_price">目标:￥{{tradeMsg.floor_price}}</view>
+			<view class="price">原价:￥{{tradeMsg.initial_price}}</view>
+		</view>
+		<view class="detail">
+			<button class="share" bindtap="bargain">帮TA砍一刀</button>
+			<button class="share2" bindtap="goHome" style="">我也要参与</button>
+			<text></text>
+		</view>
+	</view>
+	<view class="help">
+		<view class="title">
+			<text>---------- 砍价列表 ----------</text>
+		</view>
+		<view class="frame">
+			<view class="row" wx:for="{{bargainerList}}" wx:key="item">
+				<image class="headimg" src="{{item.avatar}}"></image>
+				<text class="content">{{item.name}} 砍价 {{item.bargain_price}}元</text>
+				<text class="time">{{item.time}}前</text>
+			</view>
+		</view>
+	</view>
+	<button wx:if="{{canIUse && authorize == false}}" class="authorize" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+</view>

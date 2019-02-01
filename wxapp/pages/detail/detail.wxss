@@ -1,0 +1,234 @@
+view, image, text, progress {
+	margin: 0;
+	padding: 0;
+}
+.app{
+	padding-bottom: 100rpx;
+	border-top: 1px solid #c12c2f;
+	min-height: 100%;
+	background-color: #e4393c;
+}
+.product{
+	margin: 30rpx;
+	padding: 30rpx;
+	background-color: #fff;
+}
+.product > .top{
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #f1f1f1;
+}
+.product > .top > .pic {
+	width: 230rpx;
+	height: 230rpx;
+}
+.product > .top > .msg {
+	position: relative;
+	height: 230rpx;
+	vertical-align: top;
+	display: inline-block;
+	width: 360rpx;
+	padding: 0 20rpx;
+}
+.product > .top > .msg > .title {
+	font-size: 16px;
+	margin-bottom: 30rpx;
+}
+.product > .top > .msg > .status {
+	position: absolute;
+	left: 20rpx;
+	bottom: 0;
+	background-color: #e01d19;
+	font-size: 12px;
+	width: 50px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.product > .top > .msg > .clock {
+	position: absolute;
+	right: 20rpx;
+	bottom: 0;
+	font-size: 12px;
+	color: #e01d19;
+}
+.product > .top > .msg > .deal {
+	position: absolute;
+	right: 20rpx;
+	bottom: 0;
+	font-size: 15px;
+	color: #e01d19;
+}
+
+.product > .detail > .share {
+	font-size: 14px;
+	margin: 20px auto 0;
+	height: 70rpx;
+	width: 500rpx;
+	line-height: 70rpx;
+	border-radius: 50rpx;
+	background-color: #e4393c;
+	color: #fff;
+}
+.product > .detail > .share2 {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 500rpx;
+	height: 70rpx;
+	background-color: #fff;
+	line-height: 70rpx;
+	text-align: center;
+	border-radius: 35rpx;
+	color: #e4393c;
+	border: 1px solid #e4393c;
+	font-size: 14px;
+}
+.product > .detail > .text {
+	font-size: 16px;
+}
+.help {
+	padding: 30rpx 0;
+}
+.help > .title {
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+}
+.help > .frame {
+	min-height: 600rpx;
+	width: 650rpx;
+	margin: 0 auto;
+	margin-top: 30rpx;
+	border-radius: 30rpx;
+	background-color: #c12c2f;
+	padding: 20rpx;
+}
+.help > .frame > .row {
+	margin: 20rpx 0;
+	padding-bottom: 20rpx;
+	border-bottom: 1px solid #922326;
+}
+.help > .frame > .none {
+	text-align:center;
+	color:#fff;
+	margin-top:20px;
+}
+.help > .frame > .row > .headimg{
+	width: 80rpx;
+	height: 80rpx;
+	vertical-align: middle;
+	border-radius: 5px;
+}
+.help > .frame > .row > .content{
+	margin-left: 20rpx;
+	font-size: 13px;
+	vertical-align: middle;
+	color: #fff;
+}
+.help > .frame > .row > .time{
+	font-size: 13px;
+	float: right;
+	height: 80rpx;
+	line-height: 80rpx;
+	vertical-align: middle;
+	color: #fafafa;
+}
+
+
+
+
+
+
+
+
+.progress {
+	margin-top: 10px;
+	position: relative;
+	padding: 30px 0;
+}
+
+.progress > .floor_price {
+	bottom: 20rpx;
+	position: absolute;
+	left: 0rpx;
+	font-size: 12px;
+	width: 180rpx;
+	/*background-color: #ddd;*/
+	text-align: center;
+	position: absolute;
+}
+
+.progress > .price {
+	bottom: 20rpx;
+	font-size: 12px;
+	width: 180rpx;
+	/*background-color: #ddd;*/
+	text-align: center;
+	position: absolute;
+	left: 460rpx;
+}
+
+.progress > .bar {
+	width: 530rpx;
+	margin: 0 auto;
+}
+
+.progress > .point {
+	position: absolute;
+	left: 0rpx;
+	top: 0;
+	text-align: center;
+	line-height: 50rpx;
+	height: 50rpx;
+	background-color: #ffc53f;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 12px;
+	width: 180rpx;
+	/*取值范围：-35 到495*/
+}
+.progress > .point > .triangle{
+	display: inline-block;
+  width:0;
+  height:0;
+  border-width:10px 10px 0;
+  border-style:solid;
+  border-color:#ffc53f transparent transparent;/*灰 透明 透明 */
+  position:absolute;
+  left: 50%;
+  margin-left: -20rpx; 	
+  bottom:-5px;
+}
+
+.buy-msg {
+	background-color:#fff;
+margin:15px;
+border:1px solid #fff;
+
+}
+.content {
+	font-size: 13px;
+	color: #333;
+	margin: 20rpx 40rpx 20rpx 140rpx;
+	padding-left: 20rpx;
+	width: 450rpx;
+	line-height: 1.8;
+}
+.content.name:before {
+	content: '收件姓名：';
+	position: absolute;
+	left: 50rpx;
+}
+.content.phone:before {
+	content: '收件电话：';
+	position: absolute;
+	left: 50rpx;
+}
+.content.address:before {
+	content: '收货地址：';
+	position: absolute;
+	left: 50rpx;
+}

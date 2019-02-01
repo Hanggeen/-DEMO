@@ -1,0 +1,46 @@
+<view class="app" wx:if="{{dataReady}}">
+	<view class="product">
+		<view class="top">
+      <image class="pic" src="{{baseurl + tradeMsg.picture}}"></image>
+			<view class="msg">
+				<text class="title">{{tradeMsg.name}}</text>
+				<text class="status">{{statusDetail}}</text>
+				<text class="clock">{{clock}}</text>
+				<text wx:if="{{tradeMsg.status == 'bought'}}" class="deal">价格:￥{{ tradeMsg.current_price}}</text>
+			</view>
+		</view>
+		<view class="progress">
+			<view class="point" style="left: {{leftPercent}}rpx">
+				￥{{ tradeMsg.current_price}}
+				<view class="triangle"></view>
+			</view>
+			<progress class="bar" percent="{{(tradeMsg.current_price - tradeMsg.floor_price) / (tradeMsg.initial_price - tradeMsg.floor_price) * 100}}" stroke-width="12" border-radius="10" activeColor="#ffc53f"/>
+			<view class="floor_price">目标:￥{{tradeMsg.floor_price}}</view>
+			<view class="price">原价:￥{{tradeMsg.initial_price}}</view>
+		</view>
+		<view class="detail">
+			<button wx:if="{{tradeMsg.status == 'going'}}" class="share"  data-name="shareBtn" open-type="share">继续砍价</button>
+			<button wx:if="{{tradeMsg.status == 'going'}}" class="share2" bindtap="buyProduct">现在购买</button>
+			<button wx:if="{{tradeMsg.status == 'bingo' || tradeMsg.status == 'timeout'}}" class="share" bindtap="buyProduct">最终价格￥{{tradeMsg.current_price}}，马上购买</button>
+			<text></text>
+		</view>
+	</view>
+	<view class="buy-msg" wx:if="{{tradeMsg.status == 'bought'}}" >
+		<view class="content name">{{tradeMsg.buy_name}}</view>
+		<view class="content phone">{{tradeMsg.buy_phone}}</view>
+		<view class="content address">{{tradeMsg.buy_address}}</view>
+	</view>
+	<view class="help">
+		<view class="title">
+			<text>---------- 砍价列表 ----------</text>
+		</view>
+		<view class="frame">
+			<view class="none" wx:if="{{bargainerList.length == 0}}">暂无砍价</view>
+			<view class="row" wx:for="{{bargainerList}}" wx:key="item">
+				<image class="headimg" src="{{item.avatar}}"></image>
+				<text class="content">{{item.name}} 砍价 {{item.bargain_price}}元</text>
+				<text class="time">{{item.time}}前</text>
+			</view>
+		</view>
+	</view>
+</view>

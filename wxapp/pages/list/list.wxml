@@ -1,0 +1,18 @@
+<!--list.wxml-->
+<view>
+	<view class="list">
+    <view class="title">我的商品</view>
+    <text class="nothing" wx:if="{{list.length == 0}}">暂无商品</text>
+		<view class="row" wx:for="{{list}}" wx:key="index">
+      <image class="pic" src="{{baseurl + item.picture}}"></image>
+			<view class="detail">
+				<text class="introduce">{{item.name}}</text>
+				<view class="tips">
+					<text class="status">{{status[item.status]}}</text>
+					<text class="current_price">￥{{item.current_price}}</text>
+					<text class="btn" bindtap="goDetail"  data-id="{{item.id}}">查看详情</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

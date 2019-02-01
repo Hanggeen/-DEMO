@@ -1,0 +1,41 @@
+.row {
+	border-top: 1rpx dashed #ddd;
+	padding: 30rpx 0rpx;
+	margin: 0 30rpx;
+	font-size: 14px;
+}
+.row.last{
+	border-bottom: 1rpx dashed #ddd;
+	padding: 35rpx 0rpx;
+}
+.row > .input {
+	width: 500rpx;
+	display: inline-block;
+	vertical-align: middle;
+}
+.row >.textarea {
+	width: 500rpx;
+	display: inline-block;
+	vertical-align: top;
+	height: 200rpx;
+	line-height: 1.4;
+}
+.row > .label {
+	vertical-align: middle;
+}
+
+.row > .label.top {
+	vertical-align: top;
+}
+.btn {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #e01d19;
+	color: #fff;
+	border-radius: 0px;
+	height: 120rpx;
+	line-height: 120rpx;
+	font-size: 16px;
+}

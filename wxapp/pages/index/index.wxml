@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view>
+  <image class="banner" src="../../imgs/banner.jpg"></image>
+  <view class="list">
+    <view>
+      <text class="title">快Pick商品砍价吧！</text>
+    </view>
+    <text class="nothing" wx:if="{{productList.length == 0}}">暂无商品</text>
+    <view class="row" wx:for="{{productList}}" wx:key="index">
+      <image class="pic" src="{{baseurl + item.picture}}"></image>
+      <view class="detail">
+        <text class="introduce">{{item.name}} </text>
+        <view class="tips">
+          <view class="price-frame">
+            <text>原价￥{{item.price}}，</text>
+            <text class="target">目标￥{{item.floor_price}}</text>
+            <text class="btn" data-id="{{item.id}}" bindtap="goBargin">马上砍价</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="car" bindtap="goMyList">
+    <image class="car-img" src="../../imgs/car.png"></image>
+  </view>
+  <button wx:if="{{canIUse && authorize == false}}" class="authorize" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+  </button>
+</view>
